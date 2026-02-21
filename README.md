@@ -19,11 +19,11 @@ I decided to recreate this classic game as a personal project to practice **Java
 
 ### Game Start
 
-![Game Start](screenshots/game-preview.png)
+![Game Start](screenshots/game_preview.png)
 
 ### Game Over
 
-![Game Over](screenshots/game-over.png)
+![Game Over](screenshots/game_over.png)
 
 ## How to Play
 
