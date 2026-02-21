@@ -5,6 +5,7 @@
     <title>Snake</title>
   </head>
   <body>
+    <div id="score">0</div>
     <canvas id="gameCanvas" width="300" height="300"></canvas>
     <style>
       #gameCanvas {
@@ -13,6 +14,12 @@
         left: 50%;
         transform: translate(-50%, -50%);
         border: 1px solid #000000;
+      }
+
+      #score {
+        text-align: center;
+        font-size: 140px;
+        font-family: "Antic Slab", serif;
       }
     </style>
   </body>
