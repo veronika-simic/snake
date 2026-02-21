@@ -43,7 +43,7 @@ When you lose, click **Play again** to restart the game.
 
 ## Live Demo
 
-Check out the game live here: [Live Demo Link]()
+Check out the game live here: [Live Demo Link](https://snake-mu-bice.vercel.app/)
 
 ## Technologies Used
 
