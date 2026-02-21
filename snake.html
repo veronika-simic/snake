@@ -11,7 +11,8 @@
   <body>
     <div id="score">0</div>
     <canvas id="gameCanvas" width="300" height="300"></canvas>
-
+    <div id="lost">You lost</div>
+    <button id="play">Play again</button>
     <style>
       #gameCanvas {
         position: absolute;
@@ -20,10 +21,31 @@
         transform: translate(-50%, -50%);
       }
 
-      #score {
+      #score,
+      #lost,
+      #play {
         text-align: center;
-        font-size: 140px;
         font-family: "Antic Slab", serif;
+      }
+
+      #score {
+        display: block;
+        font-size: 140px;
+      }
+
+      #lost,
+      #play {
+        display: none;
+      }
+
+      #lost {
+        font-size: 80px;
+        margin-bottom: 1rem;
+      }
+
+      #play {
+        font-size: 40px;
+        margin: 0 auto;
       }
     </style>
   </body>
@@ -61,7 +83,12 @@
 
     function main() {
       // If the game ended return early to stop game
-      if (didGameEnd()) return;
+      if (didGameEnd()) {
+        document.getElementById("lost").style.display = "block";
+        document.getElementById("play").style.display = "block";
+        document.getElementById("score").style.display = "none";
+        return;
+      }
 
       setTimeout(function onTick() {
         changingDirection = false;
@@ -171,6 +198,31 @@
         dx = 0;
         dy = 10;
       }
+    }
+
+    document.getElementById("play").addEventListener("click", restartGame);
+
+    function restartGame() {
+      snake = [
+        { x: 150, y: 150 },
+        { x: 140, y: 150 },
+        { x: 130, y: 150 },
+        { x: 120, y: 150 },
+        { x: 110, y: 150 },
+      ];
+
+      score = 0;
+      document.getElementById("score").innerHTML = score;
+
+      dx = 10;
+      dy = 0;
+
+      document.getElementById("lost").style.display = "none";
+      document.getElementById("play").style.display = "none";
+      document.getElementById("score").style.display = "block";
+
+      createFood();
+      main();
     }
   </script>
 </html>
