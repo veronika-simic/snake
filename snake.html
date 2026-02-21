@@ -1,0 +1,23 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snake</title>
+  </head>
+  <body>
+    <canvas id="gameCanvas" width="300" height="300"></canvas>
+    <style>
+      #gameCanvas {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid #000000;
+      }
+    </style>
+  </body>
+  <script>
+    const gameCanvas = document.getElementById("gameCanvas");
+    const context = gameCanvas.getContext("2d");
+  </script>
+</html>
