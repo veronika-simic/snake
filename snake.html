@@ -19,5 +19,28 @@
   <script>
     const gameCanvas = document.getElementById("gameCanvas");
     const context = gameCanvas.getContext("2d");
+    let snake = [
+      { x: 150, y: 150 },
+      { x: 140, y: 150 },
+      { x: 130, y: 150 },
+      { x: 120, y: 150 },
+      { x: 110, y: 150 },
+    ];
+
+    function drawSnakePart(snakePart) {
+      context.fillStyle = "lightgreen";
+      context.strokeStyle = "darkgreen";
+      context.fillRect(snakePart.x, snakePart.y, 10, 10);
+      context.strokeRect(snakePart.x, snakePart.y, 10, 10);
+      console.log(context);
+    }
+
+    function drawSnake(snake) {
+      snake.forEach((s) => {
+        console.log(s);
+        drawSnakePart(s);
+      });
+    }
+    drawSnake(snake);
   </script>
 </html>
